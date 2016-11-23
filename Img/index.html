@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="iso-8859-1">
+        <title>Testing mousewheel plugin</title>
+        <style>
+            html {
+                font: 13px Arial, sans-serif;
+            }
+            #stage {
+                color: #fff;
+                position: relative;
+                zoom: 1;
+            }
+            #logger {
+                position: absolute;
+                top: 100px;
+                left: 0;
+                width: 480px;
+                height: 310px;
+                overflow: auto;
+                z-index: 100;
+            }
+            #logger p {
+                color: #000;
+                padding: 2px;
+                border-bottom: 1px solid #ccc;
+                margin: 0;
+            }
+            #logger p:nth-child(even) {
+                background-color: #ffffe8;
+            }
+            #logger p:nth-child(10n) {
+                border-bottom-color: #000;
+            }
+        </style>
+        <script>
+            (function() {
+                var verMatch = /v=([\w\.]+)/.exec(location.search),
+                    version = verMatch && verMatch[1],
+                    src;
+                if (version)
+                    src = 'code.jquery.com/jquery-' + version;
+                else
+                    src = 'code.jquery.com/jquery-git';
+                document.write('<script src="http://' + src + '.js"><\/script>');
+            })();
+        </script>
+        <script>
+            $(function() {
+                $('#userAgent').html(navigator.userAgent);
+                $('#jqueryVersion').html($.fn.jquery);
+
+                var loghandle = function(event, delta) {
+                    var o = '', id = event.currentTarget.id || event.currentTarget.nodeName;
+
+                    o = '#' + id + ':';
+
+                    if (delta > 0)
+                        o += ' up (' + delta + ')';
+                    else if (delta < 0)
+                        o += ' down (' + delta + ')';
+
+                    if (event.deltaY > 0)
+                        o += ' north (' + event.deltaY + ')';
+                    else if (event.deltaY < 0)
+                        o += ' south (' + event.deltaY + ')';
+
+                    if (event.deltaX > 0)
+                        o += ' east (' + event.deltaX + ')';
+                    else if (event.deltaX < 0)
+                        o += ' west (' + event.deltaX + ')';
+
+                    o += ' deltaFactor (' + event.deltaFactor + ')';
+
+                    log( o );
+                };
+
+                $(document)
+                    .mousewheel(function(event, delta) {
+                        loghandle(event, delta);
+                    });
+
+                function log(msg) {
+                    $('#logger').append('<p>' + msg + '<\/p>')[0].scrollTop = 999999;
+                }
+            });
+        </script>
+        <script src="jquery.mousewheel.js"></script>
+    </head>
+    <body>
+        <div id="stage">
+            <div id="logger"></div>
+        </div>
+    </body>
+</html>

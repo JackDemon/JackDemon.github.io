@@ -1,0 +1,169 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+/*html {*/
+    /*overflow:scroll;*/
+
+/*}*/
+body {
+    font-family: HeitiJ-Light,"Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: .7rem;
+}
+.video{
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -9999;
+    -webkit-filter:grayscale(100%);
+    overflow: hidden;
+}
+.logo{
+    position: fixed;
+    top: 1rem;
+    left: 2rem;
+    /*height: 5rem;*/
+    width: 15rem;
+    /*float: left;*/
+    padding: 1rem;
+    z-index: 999;
+    /*overflow: hidden;*/
+}
+.page{
+    height: 100%;
+    width: 100%;
+    background: red;
+    overflow: hidden;
+}
+#zlogo{
+    font-size: 3rem;
+    font-weight:100;
+    color: #fff;
+}
+.love{
+    display: none;
+    color: #fff;
+}
+.listBar{
+    position: fixed;
+    right: 3rem;
+    top: 2.3rem;
+    width: 3rem;
+    height: 3rem;
+    cursor:pointer;
+    /*overflow: hidden;*/
+}
+.bars{
+    position: fixed;
+    top:2.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    overflow: hidden;
+}
+.bar{
+    width: 1.8rem;
+    height: .15rem;
+    background: #fff;
+    margin: .6rem;
+}
+.bgColor{
+    display: none;
+    position: fixed;
+    /*margin-left: 1px;*/
+    /*margin-top: 1px;*/
+    top:0;
+    right: 0;
+    width:12%;
+    height:100%;
+    background: #000;
+    opacity:0.7;
+    filter:alpha(opacity=70);
+    text-align: center;
+    overflow: hidden;
+    z-index: 9999;
+}
+.listMain:nth-child(1){
+    margin-top:4rem ;
+}
+.listMain{
+    color: #fff;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
+.bar4{
+    height: .1rem;
+    width: 80%;
+    margin-top: 4rem;
+    margin-left: 10%;
+    background: #fff;
+}
+.footerlist{
+    /*position: fixed;*/
+    /*bottom:2rem;*/
+    /*right:3rem;*/
+    width: 3rem;
+    height: 10rem;
+    /*overflow: hidden;*/
+}
+.footList{
+    display: block;
+    width: 2.2rem;
+    height: 2.2rem;
+    background: #373737;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#top_div{
+    position:fixed;
+    bottom:8rem;
+    right:3rem;
+    display:none;
+}
+.a3{
+    position: fixed;
+    bottom:2.1rem;
+    right: 3rem;
+}
+.a2{
+    position: fixed;
+    bottom:5rem;
+    right: 3rem;
+}
+.footerlist img{
+    width: 100%;
+}
+
+
+/*大屏幕*/
+@media (min-width: 1200px) {
+
+}
+
+/*平板电脑和小屏电脑之间的分辨率*/
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+
+/*横向放置的手机和竖向放置的平板之间的分辨率*/
+@media (max-width: 767px) {
+    .bgColor{
+        width: 100%;
+    }
+}
+
+/*横向放置的手机及分辨率更小的设备*/
+@media (max-width: 480px) {
+    .bgColor{
+        width: 100%;
+    }
+}

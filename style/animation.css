@@ -1,0 +1,82 @@
+@keyframes myfirst {
+    0%{
+        transform:rotate(20deg);
+        -webkit-transform:rotate(20deg);
+        -moz-transform:rotate(20deg);
+        -o-transform:rotate(20deg);
+        /*height: 0rem;*/
+        /*width: 7rem;*/
+    }
+    25%{
+        transform:rotate(-17deg);
+        -webkit-transform:rotate(-17deg);
+        -moz-transform:rotate(-17deg);
+        -o-transform:rotate(-17deg);
+        /*height: 2rem;*/
+        /*width: 7rem;*/
+    }
+    50%{
+        transform:rotate(13deg);
+        -webkit-transform:rotate(13deg);
+        -moz-transform:rotate(13deg);
+        -o-transform:rotate(13deg);
+        /*height: 3rem;*/
+        /*width: 7rem;*/
+    }
+    75%{
+        transform:rotate(-6deg);
+        -webkit-transform:rotate(-6deg);
+        -moz-transform:rotate(-6deg);
+        -o-transform:rotate(-6deg);
+        /*height: 4rem;*/
+        /*width: 7rem;*/
+    }
+    100%{
+        transform:rotate(0deg);
+        -webkit-transform:rotate(0deg);
+        -moz-transform:rotate(0deg);
+        -o-transform:rotate(0deg);
+        /*height: 5rem;*/
+        /*width: 7rem;*/
+    }
+}
+@keyframes mysecond {
+    0%{
+
+    }
+    25%{
+
+    }
+}
+a:hover{
+    text-decoration: none;
+}
+.logo:hover {
+    cursor:pointer;
+    animation: myfirst 4s;
+    -moz-animation: myfirst 4s;	/* Firefox */
+    -webkit-animation: myfirst 4s;	/* Safari 和 Chrome */
+    -o-animation: myfirst 4s;	/* Opera */
+    /*animation-iteration-count: 1;*/
+
+}
+.logo:hover .love{
+    display: inline;
+}
+.listBar:hover{
+    position: fixed;
+    right: 3rem;
+    top: 2rem;
+    width: 3rem;
+    height: 3rem;
+    cursor:pointer;
+}
+/*.listBar:hover .bar {*/
+    /*display: none;*/
+/*}*/
+/*.listBar:hover .bgColor{*/
+    /*display: block;*/
+/*}*/
+/*.bgColor:hover .footerlist{*/
+/*display: none;*/
+/*}*/

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Canvas雨滴下落动画DEMO演示 - 何问起</title><base target="_blank" />
+    <link rel="stylesheet" type="text/css" href="http://hovertree.com/texiao/html5/4/hovertreemalize.css" />
+    <link rel="stylesheet" type="text/css" href="http://hovertree.com/texiao/html5/4/hovertreerain.css">
+    <style media="screen">
+        body {
+            overflow: hidden;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <script src="http://hovertree.com/texiao/html5/4/rainyday.min.js"></script>
+    <script>
+        function run() {
+            var image = document.getElementById('background');
+            image.onload = function() {
+                var engine = new RainyDay({
+                    image: this
+                });
+                engine.rain([ [0, 2, 200], [3, 3, 1] ], 100);
+            };
+            image.crossOrigin = 'anonymous';
+            image.src = 'http://hovertree.com/texiao/html5/4/hovertree3.jpg';
+        }
+    </script>
+
+    <!--[if IE]>
+    <script src="http://hovertree.com/texiao/html5/4/html5shiv.min.js"></script>
+    <![endif]-->
+
+</head>
+<body onLoad="run();">
+
+<header class="htmleaf-header">
+    <div class="htmleaf-demo center">
+        <a href="http://hovertree.com">何问起</a>
+        <a href="http://hovertree.com/texiao/">特效</a>
+        <a href="http://www.baidu.com/baidu?word=%E5%A4%A9%E6%B0%94+&ie=utf-8&tn=bds&cl=3&ct=2097152&si=hovertree.com&s=hovertree.com" class="current">天气预报</a>
+        <a href="http://hovertree.com/hvtart/bjae/a6w6e2qg.htm">原文</a>
+        <br />下雨了，记得收衣服，出门记得关窗户
+    </div>
+</header>
+
+<img id="background" alt="background" src="" />
+
+</body>
+</html>
